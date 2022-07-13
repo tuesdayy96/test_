@@ -21,13 +21,13 @@
                         for(var i in data){
                             var $id = data[i].id;
                             var $name = data[i].name;
-                            var $gendar = data[i].gender;
+                            var $gender = data[i].gender;
                             var $team = data[i].team;
 
                             var row = $("<tr>").append(
                                 $("<td>").text($id),
                                 $("<td>").text($name),
-                                $("<td>").text($gendar),
+                                $("<td>").text($gender),
                                 $("<td>").text($team),
                             );
 
@@ -39,7 +39,7 @@
                 }
             })
             $('#myInput').on('keyup',function(){
-                var value = $(this).val();
+                var value = $(this).val().toLowerCase();
                 $('.wrap tr').filter(function(){
                     $(this).toggle($(this).text().toLowerCase().indexOf(value)>-1);
                 });
